@@ -1,0 +1,28 @@
+<script>
+    //bind函数的作用
+    //1、改变this的指向
+    //2、第一个接受的参数是this的值，后面的参数是函数的变量
+    //3、返回一个函数，并且返回值保持不变
+
+    function test(a,b,c){
+        console.log(a,b,c)
+        console.log("this",this)
+        return "123"
+    }
+    //普通的方式执行
+    const result1=test(1,2,4)
+    console.log("result1",result1)
+
+    //手写bind函数--myBind所返回的对象是一个函数
+    Function.prototype.myBind=function (){
+        // console.log("mybind",this)
+        const self=this//this的指向是一个test函数
+        const arg=[...arguments]
+        const thisValue=arg.shift()
+        return function (){
+            return self.apply(thisValue,arg)
+        }
+    }
+    const  result2=test.myBind({name:"zhangsan"},1,2,3)
+    console.log("result2",result2())
+</script>

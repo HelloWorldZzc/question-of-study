@@ -1,0 +1,37 @@
+<script>
+  function loadImg(src){
+    const p=new Promise((resolve, reject) =>{
+      const img=document.createElement("img")
+        img.onload=function (){
+          resolve("加载成功",img)
+        }
+        img.onerror=function (){
+          reject("图片加载失败")
+        }
+        img.src=src
+    } )
+    return p
+  }
+  const url1="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F02%2F2109242332225H9-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1655433830&t=4cdd459f8f14bc75d91fe84fe63c7952"
+  const url2="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F02%2F2109242306111155-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1655433830&t=d5b5261b731b66b6008aac5d2ef6d477"
+    loadImg(url1).then(res=>{
+        console.log("图片1 OK",res)
+        loadImg(url2).then(res=>{
+            console.log("图片2 ok")
+        },err=>{
+            console.log("图片2 err")
+        })
+    },err=>{
+        console.log("图片1 err",err)
+    })
+  // loadImg(url1).then(res=>{
+  //     console.log("图片1 OK",res)
+  //       return loadImg(url2)
+  //     }).then(res=>{
+  //         console.log("图片2 OK",res)
+  // }).catch(err=>{
+  //     console.log(err)
+  // })
+
+
+</script>

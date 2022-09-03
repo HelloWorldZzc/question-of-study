@@ -1,0 +1,24 @@
+<script>
+    class person{
+        constructor(name) {
+            this.name=name
+        }
+    }
+   let xm=new person("zhangsan")
+    console.log(xm.__proto__===person.prototype)
+    console.log(Object.getPrototypeOf(person)===person.prototype)
+    let obj=new Object()
+    console.log(obj.__proto__===Object.prototype)
+    //原型 prototype 原型链是原型上的一条链
+/**
+ *  prototype与__proto__的区别与联系
+ *  1、prototype是函数才有的属性，__proto__是每个对象都有的属性（不是一个标准的属性，已经从web中删除）
+ *  2、prototype是构造函数访问原型对象，__proto__是对象实例访问原型对象
+ *  3、prototype属性可以给函数和对象添加可共享（继承）的方法、属性，__proto__是查找某函数或对象的原型链方式
+ *  __proto__称之为隐式原型，一个对象的隐式原型指向构造该对象的构造函数的原型 xm.__proto__===person.prototype
+ *
+ *
+ * 目前有更好的方式能代替prototype 使用 Object.getPrototypeOf(person)
+ */
+
+</script>

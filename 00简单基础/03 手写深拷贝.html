@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  const obj={
+    name:"张三",
+    age:18,
+    friend:[{
+      name:"李四"
+    },{
+      name:"王五"
+    }
+    ]
+  }
+  // const obj1=obj
+  // obj1.name="test"
+  // console.log(obj.name)
+  // console.log(obj1.name)
+//  -------使用手写深拷贝的函数之后
+  function deepCopy(obj){
+    //要是是普通的数据类型就直接返回 tip：函数怎么能拷贝勒 所以只能是！=obj
+    if (typeof obj !=="object"){
+      return obj
+    }
+      var result={}
+    //确定数据类型的部分
+    if ( obj instanceof Array){
+      result=[]
+    }
+    //开始真正的深拷贝的过程了
+    for (let key in obj){
+      if (obj.hasOwnProperty(key)){
+        //深拷贝需要使用遍历操作，适得其所有的数据都能被复制
+        result [key]=deepCopy(obj[key])
+      }
+    }
+    return result
+  }
+
+  const obj2=deepCopy(obj)
+  obj2.friend[0].name="哈哈哈哈"
+  console.log(obj)
+  console.log(obj2)
+
+</script>
+</html>

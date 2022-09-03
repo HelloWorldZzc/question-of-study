@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+</body>
+<script>
+function myAjax(url){
+    const myAjax=new Promise((res,rej)=>{
+        const xhr=new XMLHttpRequest()
+        xhr.open("GET",url,true)
+        xhr.onreadystatechange=function (){
+            if (xhr.readyState===4){
+                if (xhr.status===200){
+                    res(JSON.parse(xhr.responseText))
+                }
+                else {
+                    rej(new Error("请求失败"))
+                }
+            }
+        }
+        xhr.send()
+    })
+    return myAjax
+
+}
+
+</script>
+</html>

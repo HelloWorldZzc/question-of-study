@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function fn(){
+    var arr=[]
+    for (var i=0;i<10;i++){
+      arr[i]=function (){
+        return i
+      }
+    }
+    return arr
+  }
+  var arr=fn()
+  console.log(arr[1]())
+  //把一个回调函数返回给arr[],arr[]中的元素为return i
+  //当开始调用的时候，window中的i已经完成了遍历为10，因此此程序的输出结果为10
+
+  //解决的方式 1-->把var改成let 这样全局中不存在i的值就不会被干扰了
+  //解决方式2--->使用闭包 原理 函数的作用域是相互独立的，是不会产生干扰
+  function fn2(){
+      var arr2=[]
+      for (var i=0;i<10;i++){
+          (function (i){
+              arr2[i]=function (){
+                  return i
+              }
+          })(i)
+      }
+      return arr2
+  }
+  var arr2=fn2()
+  console.log(arr2[0]())
+
+
+  //闭包为什么口里造成内存泄露
+  function fn3(){
+      var d=1
+      return function (){
+          console.log(d)
+      }
+  }
+  //在IE浏览器中，垃圾回收的时候要是检测到变量还有其他内容有联系，则此变量不会被回收
+  //因此在日常使用代码的时候要减少使用闭包
+</script>
+</html>

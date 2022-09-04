@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+定义：能够访问到其他函数作用域中的对象的函数，称为闭包
+-->
+</body>
+<script>
+  /**
+   * 常见的闭包的使用场景
+   * 1、回调函数
+   *  1-1 事件的回调 dom.addEventListener("click",function(){xxx}})
+   *  1-2 获取异步操作的内容 如：Ajax，setTimeout，promise 等
+   * */
+  //使用闭包，访问异步函数的值
+  function fn(test){
+    setTimeout(function (){
+      let a=1000
+      test(a)
+    },1000)
+  }
+  // let f=function (a){
+  //   console.log(a)
+  // }
+  // fn(f)
+  fn(function (a){
+    console.log(a)
+  })
+
+  //使用自调用函数
+  let count=(function (){
+    let num=1
+    function change(val){
+      num+=val
+    }
+    return{
+      add:function (){
+        change(1)
+      },
+      subtraction:function (){
+        change(-1)
+      },
+      value:function (){
+        return num
+      }
+    }
+  })()
+
+  //防抖与节流
+  function debounce(func,wait){
+    let timer=null
+    return function (){
+      if (timer!=null){
+        clearTimeout(timer)
+      }
+      timer=setTimeout(func,wait)
+    }
+  }
+count.add
+</script>
+</html>

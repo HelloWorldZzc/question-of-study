@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //tip var x=function 与 functionX存在区别哦
+  function fn(a,c){
+    console.log(a) //funcA
+    var a=123
+    console.log(a) //123
+    console.log(c)  //functionC
+    function a(){}
+    if (false){
+      var d=678
+    }
+    console.log(d) //un
+    console.log(b) //un
+    var b=function (){}
+    console.log(b) //function
+    function c(){}
+    console.log(c)//functionC
+
+  }
+
+  fn(1,2)
+  /*
+  * Ao{
+  * a:un 1 funcA  |  123 functionA
+  * b:un   |function
+  * c:un 2 functionC |
+  * d:un
+  * }
+  * */
+</script>
+</html>

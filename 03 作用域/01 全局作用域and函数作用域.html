@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    * 全局作用域：在页面打开的时候被创建，在页面关闭的时候而销毁
+    * 由于作用域全局，在页面的任何位置能够访问到，可以认为是window
+    * */
+
+    /**
+     * 函数（局部）作用域
+     * 1、每次调用时，函数作用域被创建，函数执行完毕的时候作用域被销毁
+     * 2、每个函数的作用域下农户独立
+     * 3、函数（局部）作用域能访问上级作用域，相邻作用域是相互独立的
+     *
+     * 另外 es6语法中加入了块级作用域 如let const都属于块级作用域
+     */
+    window.temp=1
+    a=()=>{
+        console.log(temp)
+        var b=2
+        console.log(b+temp)
+    }
+    a()
+</script>
+</body>
+</html>

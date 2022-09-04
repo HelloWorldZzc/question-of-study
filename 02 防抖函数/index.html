@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+     在用户输入的时候时刻监听用户
+     但不能一直对服务器后盾发送请求，需要使用到防抖函数（定时器）
+     -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.js"></script>
+</head>
+<body>
+  <form>
+    <input placeholder="请输入用户名" id="input_userName"/>
+    <input placeholder="请输入密码" id="input_userPwd"/>
+    <button> 提交</button>
+  </form>
+</body>
+<script>
+  const userName=document.getElementById("input_userName")
+  const pws=document.getElementById("input_userPwd")
+
+  //原本事件的监听，这样频繁的发送请求会增加服务器的负担
+  // userName.addEventListener("input",function (){
+  //     let str=userName.value
+  //     axios.get("http://localhost:3000/posts").then(res=>{
+  //         console.log(res)
+  //     })
+  // })
+
+  //加入了防抖函数之后
+  //定义了一个防抖函数，主要是用定时器来实现
+  function debounce(func,wait){
+      let time=null
+      return function (){
+          if (time!==null){
+              clearTimeout(time)
+          }
+          time=setTimeout(func,wait)
+      }
+  }
+
+  const todo=debounce(function (){
+      axios.get("http://localhost:3000/posts").then(res=>{
+          console.log(res)
+      })
+  },1000)
+
+  userName.addEventListener("input",function (){
+      let str=userName.value
+      todo()
+  })
+
+</script>
+</html>

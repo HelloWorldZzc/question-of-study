@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function a(b,c){
+    console.log(b);//function
+    var b=0
+    console.log(b)//0
+     function b(){
+      console.log("bbb")
+    }
+    console.log(c)//un
+    console.log(b) //function
+  }
+  a(1)
+  /*
+  与全局预编译类似，函数也会进行预编译操作
+  1、寻找var xxx ，将其赋值为un
+  2、寻找形参 将其赋值为un
+  3、给形参赋值
+  4、寻找function进行赋值
+  当预编译完成之后，则按照原本的流程从上到下完成
+  * {
+  * b:un 1 func
+  * c:un
+  * }
+  * */
+</script>
+</html>

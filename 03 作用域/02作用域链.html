@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 作用域链的用途，是保证对执行环境有权访问所有变量和函数的有序访问
+    let a=1
+    function fn(){
+        let b=a+1
+        console.log(b)
+    }
+   console.dir(fn)
+    /**
+     * 从代码执行的角度来看
+     * 在创建函数fn的时候，会创建一个预先包含全局变量对象的作用域链，这个作用域链被保存在scope属性中。
+     * 当调用fn函数的时候，会创建一个执行环境，通过复制生成的scope属性中的对象构建环境的作用域链，然后创建活动对象VO并推入执行环境的作用域链
+     * 在函数执行完毕之后，作用域链也同时销毁
+     * */
+
+</script>
+</html>

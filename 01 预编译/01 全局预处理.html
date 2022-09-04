@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    //当上下文创建完成之后，在执行前的一段时间，在这个时间内，会对js代码进行预处理
+    console.log(a)//function a
+     //必须使用var，之后的const与let是es6的语法，不能有此效果
+    function a(){}
+    var a=100
+    a=100
+    console.log(a)//100
+    //在全局中会对所有的js进行预处理，创建变量VO，在此中首先是un(var声明的变量)，在然后是function a（function声明的变量）
+    //why？规则就是如此，先调用完所有的var声明后看函数，预处理完成之后从，js被调用则上到下执行
+    //在预编译完之后调用js代码，第一行输出直接读取预处理的代码，因此输出function a
+    //后面由于进行了赋值操作，第二个输出的值为100
+</script>
+</html>

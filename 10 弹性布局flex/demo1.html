@@ -1,0 +1,40 @@
+<!--使用弹性布局完成head main foot的布局样式-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    main{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100vh;
+    }
+    main :nth-child(1){
+        height: 30px;
+        background-color: blue;
+    }
+    main :nth-child(2){
+        height: 100px;
+        flex-grow: 1;
+        background-color: aqua;
+    }
+    main :nth-child(3){
+        height: 50px;
+        background-color: chartreuse;
+    }
+</style>
+<body>
+<main>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!--谷歌浏览器展示最小的字体为12px,不能展示更小的字体了-->
+<!--使用transform的缩放属性达到更小的缩放效果-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  .normal{
+    font-size: 12px;
+  }
+  .small{
+    font-size: 12px;
+    transform: scale(0.8);
+    /*-webkit-transform: scale(0.8);*/
+  }
+</style>
+<body>
+<p class="normal">测试文字1</p>
+<p class="small">测试文字2
+</p>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /*head是举例 最简单的居中的情况说明*/
+  .head{
+    height: 10vh;
+    width: 100vw;
+    background-color: brown;
+    display: flex;
+  }
+  .head span{
+    margin: auto;
+  }
+  /*这里展示的是一些正常的相关流程*/
+  .side{
+    height: 80vh;
+    width: 20vw;
+    background-color: chartreuse;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center{
+    background-color: aqua;
+    flex-grow: 1;
+  }
+  .footer{
+    width: 100vw;
+    height: 10vh;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
+<body>
+<div class="main">
+  <div class="head">
+    <span>head</span>
+  </div>
+  <div class="side">side</div>
+  <div class="center">center</div>
+  <div class="footer">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+当父组件中包含一个子组件时,若里面包含了所有的生命周期,该如何调用呢?
+调用顺序:
+    F:beforeCreate--->F:created---->F:beforeMount---->C:beforeCreate--->C:created----->
+    ---->C:beforeMount---->C:mounted---->F:mounted---->F:beforeDestroy---->C:beforeDestroy
+    ----->C:destroyed---->F:destroyed
+
+理解他的调用顺序:
+    首先父组件在调用的时候,首先要调用基础的生命周期钩子,在创建之后构建之时,需要激活子组件,待子组件完成构建的生命周期流程后父组件再完成构建操作
+
+    在销毁的时候,父组件首先经理将要销毁的操作,子组件也要经历销毁操作,在经理已经销毁的操作,待子组件销毁完成之后,父组件也完成销毁操作
+

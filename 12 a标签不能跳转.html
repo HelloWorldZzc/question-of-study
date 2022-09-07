@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--展示了几种a标签不能进行跳转的方法-->
+<!--方法一:使用return false-->
+<a href="https://www.baidu.com" onclick="return false">这是一个不能跳转的a标签</a>
+<!--方法二 使用JavaScript阻止默认行为-->
+<a href="https://www.baidu.com" id="test">JavaScript阻止跳转</a>
+<!--方式三:使用#,但是有一个缺点,标题栏会多一个#虽然并不会跳转-->
+<a href="#">#防止跳转</a>
+<!--方式四:JavaScript:void(0)-->
+<a href="javascript:void(0)">void0不能跳转</a>
+</body>
+<script>
+  document.getElementById("test").onclick=function (e){
+    e.preventDefault()
+  }
+</script>
+</html>

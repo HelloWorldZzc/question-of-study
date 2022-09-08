@@ -1,0 +1,37 @@
+<!--html的新属性,data-*属性来嵌入自定义数据,下面是从网上获取的一些案例情况-->
+<!--假设e表示的是这个元素,那么可以使用e.getAttribute("data-*")来获得相关的元素-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>物种</h1>
+
+<p>点击某个物种来查看其类别：</p>
+
+<ul>
+    <li onclick="showDetails(this)" id="owl" data-animal-type="鸟类">喜鹊</li>
+    <li onclick="showDetails(this)" id="salmon" data-animal-type="鱼类">金枪鱼</li>
+    <li onclick="showDetails(this)" id="tarantula" data-animal-type="蜘蛛">蝇虎</li>
+</ul>
+<button onclick="test(this)" data-animal-type="bzd">测试</button>
+
+</body>
+<script>
+    function showDetails(animal) {
+
+        let animalType = animal.getAttribute("data-animal-type");
+        alert(animal.innerHTML + "是一种" + animalType + "。");
+    }
+    function test(test){
+        console.log(test.getAttribute("data-animal-type"))
+    }
+</script>
+</html>
+
+
+
+
+

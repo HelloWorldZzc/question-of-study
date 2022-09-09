@@ -1,0 +1,63 @@
+<!--html5的新特性,拖拽释放-->
+<!--tip:其中的event属性这个方式已经弃用,在项目中需要使用p.onxxx=function(e)的方式获取,在单文件中没有关系-->
+<!--
+在拖动目标上触发事件 (源元素):
+ondragstart - 用户开始拖动元素时触发
+ondrag - 元素正在拖动时触发
+ondragend - 用户完成元素拖动后触发
+
+释放目标时触发的事件:
+ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件
+ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件
+ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件
+ondrop - 在一个拖动过程中，释放鼠标键时触发此事件
+
+流程:1个被拖拽的和一个接收容器
+首先被拖拽的要有属性允许其拖拽
+开始拖动的时候获取其属性
+拖动到容器中松手后,执行函数,添加到属性中
+拖动后应该组织div的默认行为,不然不能移动过去
+
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>拖拽释放</title>
+  <style type="text/css">
+    #div1 {width:350px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+  </style>
+  <script type="text/javascript">
+    //某被拖动的对象在另一个容器范围内,所触发的事件
+    function allowDrop(ev)
+    {
+      ev.preventDefault();
+    }
+
+    //刚刚开始拖动的时候的事件
+    function drag(ev)
+    {
+      console.log(ev)
+      ev.dataTransfer.setData("Text",ev.target.id);
+      console.log(ev.target.id)
+    }
+
+    //在一个拖动过程中，释放鼠标键时触发此事件
+    function drop(ev)
+    {
+     let data=ev.dataTransfer.getData("Text");
+     console.log(data)
+      ev.target.appendChild(document.getElementById(data));
+      ev.preventDefault();
+    }
+  </script>
+</head>
+<body>
+<!--准备接受的函数 ondrop    ondragover-->
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br />
+<!--是否可以拖拽  拖拽开始的时候调用的函数-->
+<p id="drag1" draggable="true" ondragstart="drag(event) ">这是一段可移动的段落。请把该段落拖入上面的矩形。</p>
+
+</body>
+</html>

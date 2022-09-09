@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="draw('canvas');">
+    <h1>元素案例</h1>
+    <canvas id="canvas" width="400" height="300"></canvas>
+</body>
+<script>
+    function draw(id) {
+        let canvas = document.getElementById(id);
+        if (canvas == null)
+            return false;
+        let context = canvas.getContext('2d');//getContext来获取图形上下⽂。
+        context.fillStyle = "#EEEEFF"; //指定颜⾊值 context取得上下⽂  fillStyle填充的样式
+        context.fillRect(0, 0, 400, 300); //填充矩形和绘制矩形边框
+        context.fillStyle = "red";//fillStyle填充的样式
+        context.strokeStyle = "blue"; //strokeStyle图形边框的样式。在该属性中填⼊边框的颜⾊值
+        context.lineWidth = 1; //设定图形边框的宽度
+        context.fillRect(50, 50, 100, 100);//填充矩形和绘制矩形边框
+        context.strokeRect(50, 50, 100, 100);
+    }
+</script>
+</html>

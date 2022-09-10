@@ -1,1 +1,0 @@
-# question-of-study

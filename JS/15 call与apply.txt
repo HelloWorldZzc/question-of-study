@@ -1,0 +1,15 @@
+1.由来
+    JavaScript中函数是对象的方式，每个函数的对象都有apply与call方式
+
+2.apply与call的用法
+    调用一个对象的方式，用另外一个对象替换当前对象
+    object1.function.apply(object2,arg)--->即object2对象应用object1对象的function方法
+
+3.apply：
+    最多只能有两个参数（新this和一个数组）
+
+4.call
+    可以接受多个参数，第一个参数与apply一样，后面的是一串数据列表
+
+5.总结：
+    apply与call实现的功能是一样的，只是参数的形式不同而已

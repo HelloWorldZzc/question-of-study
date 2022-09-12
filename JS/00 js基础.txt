@@ -1,0 +1,20 @@
+1.语言的分类：
+    静态语言（强类型语言）：
+        在编译时变量的数据类型既可确定的语言，多数静态类型语言在使用变量之前必须声明数据类型
+        例如：C++,JAVA,C#等
+
+    动态语言（弱类型语言）：
+        动态语言是在运行时候确定数据类型的语言，变量在使用之前不需要声明，通常变量的类型是被赋值的那个值的类型
+        例如：PHP ASP Ruby python javaScript unix shell等语言
+
+2.JavaScript的基本数据类型
+    字符串（String）、数字（Number）、布尔（Boolean）、空（Null）、未定义（Undefined）,还有在 ES6 中新增的 Symbol
+
+    typeof方式是用来检测数据的数据类型，他能返回的值string number Boolean undefined function object
+    tip：Array与null返回object，function与class返回function
+
+3.一些运算符的逻辑关系
+    console.log(4>=6||true&&1||false)--->false||true&&1||false--->true&&1||false--->1||false--->1
+    A||B 若A为真，那直接返回A,若A为假，直接返回B
+    A&&B 若A为真，那直接返回B,若A为假，直接返回A
+    tip:与react框架中的逻辑相似

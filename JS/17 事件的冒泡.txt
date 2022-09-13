@@ -1,0 +1,16 @@
+大多数的事件都会进行冒泡，对于一些不会进行冒泡的事件，我们记住即可
+
+1、UI事件：
+    load
+    unload
+    scroll
+    resize
+
+2、焦点事件
+    blur
+    focus
+
+3.鼠标事件
+
+    mouseleave
+    mouseenter

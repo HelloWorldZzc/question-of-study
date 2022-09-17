@@ -19,4 +19,4 @@ fun4()
 fun4=function(){console.log(4)}
 
 //注意，这里的变量提升指的是 var xxx=function(){}
-//要是这样的话 var xxx=function xxx() {}则当成正常条件执行即可
+

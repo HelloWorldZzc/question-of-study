@@ -1,0 +1,4 @@
+ES的由来
+    ECMA（欧洲计算机制造联合会）标注：为了取得技术优势，微软推出了 JScript，CEnvi 推出 ScriptEase，与 JavaScript 同样可在浏览器上运行。为了统一规格 JavaScript
+    兼容于ECMA标准，因此也称为 ECMAScript。
+

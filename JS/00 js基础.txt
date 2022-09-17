@@ -42,3 +42,25 @@
     4.特殊
     	eval()
 
+5. isNaN()函数
+    判断所输入的数是否为NaN--->会提前进行类型转换，将括号内的数转换成number类型
+
+    isNaN(NaN)----->T
+    isNaN("123")----->F("123"转成123)
+    isNaN("abc")---->T("abc"转成NaN)
+    isNaN(null)--->F(null转成0)
+    isNaN(undefined)---->T(undefined转成NaN)
+
+
+6 undefined的比较
+    undefined>0
+    undefined<0
+    undefined==0  --->均返回F
+
+    null>0
+    null==0
+    null<0  --->均返回F
+
+    NaN ==NaN ---->返回F
+
+    undefined==null   ---->返回T

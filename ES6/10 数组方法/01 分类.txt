@@ -1,0 +1,7 @@
+数组常用的方法：
+    1、改变原数组的（在原来数组基础上去改变）
+        reverse、sort、push、pop、unshift、shift，splice
+
+    2、不改变原数组的
+        forEach、filter、map、reduce、reduceRight、slice、concat、join--->split，toString
+

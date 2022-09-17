@@ -1,0 +1,15 @@
+1、浏览器的组成
+    1）shell部分--->用户能操作部分
+    2)内核部分--->用户看不到的部分
+        1.渲染引擎（语法规则和渲染）
+        2.js引擎
+        3.其他浏模块（如异步）
+
+2、主流浏览器的内核
+    IE：trident
+    Chrome：webkit/blink
+    Firefox：gecko
+    Opera：presto
+    Safari：webkit
+
+

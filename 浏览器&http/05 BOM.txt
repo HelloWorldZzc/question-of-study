@@ -1,0 +1,4 @@
+BOM定义
+    Browser Object Model 定义了操作浏览器的接口
+
+BOM对象：window，history，navigator,Screen,Location等

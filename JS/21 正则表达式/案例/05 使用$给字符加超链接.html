@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <main>
+    <!--  给字符添加相关的超链接，使用其他的方式也行，这里只是熟悉$&的方法
+        使用replace的回调函数本身就包括这样的变量
+      -->
+    这是一个普通的字符
+    这又是一个普通的字符
+  </main>
+  <button onclick="add()">添加超链接</button>
+</body>
+<script>
+  const main=document.querySelector("main")
+  add=function (){
+    main.innerHTML=main.innerHTML.replace(/字符/g,`<a href="https://www.baidu.com">$&</a>`)
+  }
+</script>
+</html>

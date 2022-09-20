@@ -7,5 +7,6 @@ while (reg.test(number)){
 }
 console.log(number)
 
+
 let arr=new Array(4).fill(1,1,2)
 console.log(arr)

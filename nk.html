@@ -3,17 +3,20 @@
 <head>
   <meta charset=utf-8>
 </head>
+<style>
+  .test{
+    color: green;
+  }
+</style>
 <body>
-<input id="input" type="text" />
-<hr>
-<span id="span"></span>
+<span id="span" class="test">22222</span>
 
 <script type="text/javascript">
-var a=100
-let b=100
-console.log(window.a)
-console.log(window.b)
-
+  let e=document.getElementById("span")
+  console.log("a",e.innerHTML)
+  console.log("b",e.clientWidth)
+  console.log("c",e.tagName)
+  console.log("d",e.className)
 </script>
 </body>
 </html>

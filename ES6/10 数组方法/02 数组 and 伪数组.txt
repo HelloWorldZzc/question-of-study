@@ -1,0 +1,11 @@
+1、什么是伪数组
+   无法直接调用数组方法或期望 length 属性有什么特殊的行为，但仍可以对真正数组遍历方法来遍历它们。
+   典型的是函数的 argument 参数，还有像调用getElementsByTagName,document.childNodes 之类的它们都返回 NodeList 对象都属于伪数组。
+
+2、将伪数组转为数组
+    Array.prototype.slice.call(fakeArray)
+
+3、使用js判断一个对象是否是数组
+    Array.isArray()
+    [].instanceof Array
+    Object.prototype.toString.call([]) //[Object Array]

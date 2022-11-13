@@ -1,6 +1,4 @@
 # question-of-study
 ......
 dd
-
-
-9
+9???
